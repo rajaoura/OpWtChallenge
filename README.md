@@ -63,7 +63,8 @@ Possible improvements :
 3) Providing CQRS 
 4) Build a web client (Angular or React or Vue)
 
-Except the first point, the project is too small.
+Except the first and last point, the project is too small to justify others improvements.
+
 
 
 
