@@ -34,7 +34,7 @@ Prerequisites :
 Authentication : 
 -----------------
 
-The application use JWT Bearer Token and except login action, all the actions needs user to be logged. 
+The application use JWT Bearer Token and except login action, all the actions needs users to be logged. 
 All the login/password are coming from Contact stored in mongodb Contacts collection. 
 When stored the password is hashed, and we compare the hash of the password given and the password stored in the database, if login succeed we return a JWT Token. 
 
@@ -47,9 +47,12 @@ Swagger integration :
 ----------------------
 
 Swagger has been included in the project and you can use it to see all the endpoints provided by the web api project. 
+If you run the solution on localhost, you can access swagger page on https://localhost:44382/swagger/index.html
 You can use it also for testing many action but there is an issue with JWT Token. 
 
 For testing the web api, the integration tests is complete (20 full tests all passed). 
+Before testing, you must run mongo (mongod.exe) and then run the web api, after that you can run the integration tests. 
+Integration tests seems better suited for me (instead pure unit tests) because business logic is quite poor in this project.
 
 
 Possible improvements : 
