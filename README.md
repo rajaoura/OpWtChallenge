@@ -50,6 +50,14 @@ Swagger has been included in the project and you can use it to see all the endpo
 If you run the solution on localhost, you can access swagger page on https://localhost:44382/swagger/index.html
 You can use it also for testing many action but there is an issue with JWT Token. 
 
+Indeed, you can first get token from login action and then click on the authorize button on the top right to define the token (Bearer + Token). 
+Then, you can test all actions coming from SkillsController (you can add skill, remove skill, get skill by id, get all skills). 
+If you logout with the same "Authorize" button, you will get 401 Http Status Code for all those actions (SkillsController). 
+Unfortunately, this does not work with ContactsController. 
+Indeed, authorization logic is much complex since we filter responses according to the user logged, so we need the token in the API passed by the attribute [FromHeader]. 
+Swagger is not able to provide this token (maybe there is a workaround but I did not find it yet).
+
+Despite this fact, the controllers actions are well documented and you can test them by code and you can look at the integration test project.
 For testing the web api, the integration tests is complete (20 full tests all passed). 
 Before testing, you must run mongo (mongod.exe) and then run the web api, after that you can run the integration tests. 
 Integration tests seems better suited for me (instead pure unit tests) because business logic is quite poor in this project.
